@@ -1,132 +1,193 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="description" content="RE-leitura oferece soluções editoriais sustentáveis, produção de livros reciclados e parcerias com escolas e editoras.">
 <title>RE-leitura | Soluções Editoriais Sustentáveis</title>
+
 <style>
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: #f5f9f7;
-    color: #333;
-    line-height: 1.6;
-  }
-  header {
-    background: linear-gradient(135deg, #0d3b1e, #1b5e20);
-    color: white;
-    padding: 60px 20px;
-    text-align: center;
-  }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #f5f9f7;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* HEADER */
+header {
+  background: linear-gradient(135deg, #0d3b1e, #1b5e20);
+  color: white;
+  padding: 60px 20px;
+  text-align: center;
+  position: relative;
+}
+
+header h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+header p {
+  font-size: 1.2rem;
+  opacity: 0.9;
+}
+
+/* LOGO NO CANTO */
+.logo-canto {
+  position: absolute;
+  top: 25px;
+  right: 35px;
+  width: 130px;
+  border-radius: 50%;
+  background: white;
+  padding: 8px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.logo-canto:hover {
+  transform: scale(1.08);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.35);
+}
+
+/* MENU */
+nav {
+  background-color: #144d18;
+  padding: 15px 0;
+  text-align: center;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+nav a {
+  color: white;
+  margin: 0 18px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+nav a:hover,
+nav a:focus {
+  color: #a5d6a7;
+  outline: none;
+}
+
+/* CONTEÚDO */
+main {
+  max-width: 1100px;
+  margin: 40px auto;
+  padding: 0 15px;
+}
+
+section {
+  margin-bottom: 60px;
+  background: white;
+  padding: 30px 25px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+section:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.12);
+}
+
+section h2 {
+  color: #1b5e20;
+  margin-bottom: 25px;
+  text-align: center;
+  font-size: 2rem;
+}
+
+section p {
+  font-size: 1.1rem;
+  margin-bottom: 15px;
+}
+
+/* GRID */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+  gap: 20px;
+}
+
+.card {
+  background: #e8f0e8;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: inset 0 0 10px rgba(27,94,32,0.2);
+}
+
+/* BOTÃO */
+.btn {
+  display: inline-block;
+  background: #2e7d32;
+  color: white;
+  padding: 12px 28px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  margin-top: 15px;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.btn:hover,
+.btn:focus {
+  background: #0d3b1e;
+  transform: translateY(-2px);
+  outline: none;
+}
+
+/* RODAPÉ */
+footer {
+  background-color: #0a2d17;
+  color: white;
+  text-align: center;
+  padding: 20px 10px;
+  font-size: 14px;
+}
+
+/* RESPONSIVO */
+@media (max-width: 768px) {
   header h1 {
-    font-size: 3rem;
-    margin-bottom: 10px;
+    font-size: 2.2rem;
   }
-  header p {
-    font-size: 1.2rem;
-    opacity: 0.85;
+
+  .logo-canto {
+    width: 90px;
+    top: 15px;
+    right: 15px;
   }
-  nav {
-    background-color: #144d18;
-    padding: 15px 0;
-    text-align: center;
-    position: sticky;
-    top: 0;
-    z-index: 100;
-  }
-  nav a {
-    color: white;
-    margin: 0 18px;
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 1rem;
-    transition: color 0.3s ease;
-  }
-  nav a:hover,
-  nav a:focus {
-    color: #a5d6a7;
-    outline: none;
-  }
-  main {
-    max-width: 1100px;
-    margin: 40px auto;
-    padding: 0 15px;
-  }
-  section {
-    margin-bottom: 60px;
-    background: white;
-    padding: 30px 25px;
-    border-radius: 12px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
-  }
+}
+
+@media (max-width: 600px) {
   section h2 {
-    color: #1b5e20;
-    margin-bottom: 25px;
-    text-align: center;
-    font-size: 2rem;
+    font-size: 1.6rem;
   }
-  section p {
-    font-size: 1.1rem;
-    margin-bottom: 15px;
+
+  nav a {
+    margin: 0 10px;
+    font-size: 0.9rem;
   }
-  .grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
-    gap: 20px;
-  }
-  .card {
-    background: #e8f0e8;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: inset 0 0 10px rgba(27,94,32,0.2);
-  }
-  .btn {
-    display: inline-block;
-    background: #1b5e20;
-    color: white;
-    padding: 12px 28px;
-    border-radius: 6px;
-    text-decoration: none;
-    font-weight: 600;
-    margin-top: 15px;
-    transition: background 0.3s ease;
-  }
-  .btn:hover,
-  .btn:focus {
-    background: #0d3b1e;
-    outline: none;
-  }
-  footer {
-    background-color: #0a2d17;
-    color: white;
-    text-align: center;
-    padding: 20px 10px;
-    font-size: 14px;
-  }
-  @media (max-width: 600px) {
-    header h1 {
-      font-size: 2rem;
-    }
-    section h2 {
-      font-size: 1.6rem;
-    }
-    nav a {
-      margin: 0 10px;
-      font-size: 0.9rem;
-    }
-  }
+}
 </style>
 </head>
+
 <body>
- <header>
-<img src="logo-releitura.png" alt="Logo RE-leitura" class="logo-canto">
-  <h1>RE-leitura</h1>
-  <p>Soluções editoriais sustentáveis para escolas e editoras</p>
+
 <header>
+  <img src="logo-releitura.png" alt="Logo RE-leitura" class="logo-canto">
   <h1>RE-leitura</h1>
   <p>Soluções editoriais sustentáveis para escolas e editoras</p>
 </header>
@@ -141,53 +202,51 @@
 
 <main>
 
-<section id="empresa" tabindex="-1">
+<section id="empresa">
   <h2>Sobre a Empresa</h2>
-  <p>A RE-leitura é especializada na produção de livros em capa dura e capa fina, 
-     priorizando práticas sustentáveis e inovação no setor editorial. Nosso foco é promover a reutilização de materiais para reduzir o impacto ambiental.</p>
+  <p>A RE-leitura é especializada na produção de livros em capa dura e capa fina, priorizando práticas sustentáveis e inovação no setor editorial.</p>
 </section>
 
-<section id="projeto" tabindex="-1">
+<section id="projeto">
   <h2>Descrição do Projeto</h2>
-  <p>O projeto da RE-leitura baseia-se em estabelecer parcerias estratégicas com escolas e editoras para coletar e reaproveitar papel e materiais gráficos descartados. Esses materiais são triados e reinseridos no processo produtivo, contribuindo para a economia circular e a diminuição do desperdício.</p>
-  <p>Objetivos principais:</p>
+  <p>O projeto baseia-se em parcerias estratégicas com escolas e editoras para coletar e reaproveitar papel e materiais gráficos descartados.</p>
   <ul>
     <li>Reduzir o desperdício de papel</li>
     <li>Diminuir os custos de produção</li>
-    <li>Incentivar práticas sustentáveis nas instituições</li>
-    <li>Promover a conscientização ambiental</li>
+    <li>Incentivar práticas sustentáveis</li>
+    <li>Promover conscientização ambiental</li>
   </ul>
 </section>
 
-<section id="servicos" tabindex="-1">
+<section id="servicos">
   <h2>Nossos Serviços</h2>
   <div class="grid">
     <div class="card">
       <h3>Livros Capa Dura</h3>
-      <p>Produção de livros com acabamento premium e alta durabilidade, utilizando materiais reciclados.</p>
+      <p>Acabamento premium e alta durabilidade com materiais reciclados.</p>
     </div>
     <div class="card">
       <h3>Livros Capa Fina</h3>
-      <p>Alternativa econômica e ecológica para material didático, ideal para uso escolar e projetos educacionais.</p>
+      <p>Alternativa econômica e ecológica para material didático.</p>
     </div>
     <div class="card">
       <h3>Parcerias Institucionais</h3>
-      <p>Programas personalizados com escolas e editoras para coleta, reutilização e produção sustentável de materiais editoriais.</p>
+      <p>Programas personalizados para produção sustentável.</p>
     </div>
   </div>
 </section>
 
-<section id="sustentabilidade" tabindex="-1">
+<section id="sustentabilidade">
   <h2>Compromisso Ambiental</h2>
-  <p>A RE-leitura adota práticas da economia circular, utilizando papel reciclado e incentivando a coleta seletiva. Nosso compromisso é minimizar a exploração de recursos naturais e fortalecer a educação ambiental nas comunidades parceiras.</p>
+  <p>Adotamos práticas da economia circular, utilizando papel reciclado e incentivando a coleta seletiva.</p>
 </section>
 
-<section id="contato" tabindex="-1">
+<section id="contato">
   <h2>Contato</h2>
   <p><strong>Email:</strong> contato@releitura.com</p>
   <p><strong>Telefone:</strong> (91) 3347-7189</p>
   <p><strong>Localização:</strong> Brasil</p>
-  <a href="mailto:contato@releitura.com" class="btn" aria-label="Enviar email para contato@releitura.com">Solicitar Proposta</a>
+  <a href="mailto:contato@releitura.com" class="btn">Solicitar Proposta</a>
 </section>
 
 </main>
